@@ -14,10 +14,10 @@ network_check
 update_os
 
 msg_info "Installing Zabbix"
-cd /tmp
+cd /tmp || exit
 curl -fsSL "$(curl -fsSL https://repo.zabbix.com/zabbix/ |
-  grep -oP '(?<=href=")[0-9]+\.[0-9]+(?=/")' | sort -V | tail -n1 |
-  xargs -I{} echo "https://repo.zabbix.com/zabbix/{}/release/debian/pool/main/z/zabbix-release/zabbix-release_latest+debian12_all.deb")" \
+  grep -oP '(?<=href=")[0-9]+\.0+(?=/")' | sort -V | tail -n1 |
+  xargs -I{} echo "https://repo.zabbix.com/zabbix/{}/debian/pool/main/z/zabbix-release/zabbix-release_latest+debian12_all.deb")" \
   -o /tmp/zabbix-release_latest+debian12_all.deb
 $STD dpkg -i /tmp/zabbix-release_latest+debian12_all.deb
 $STD apt-get update
