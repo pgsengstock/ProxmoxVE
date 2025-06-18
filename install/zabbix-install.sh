@@ -13,7 +13,7 @@ setting_up_container
 network_check
 update_os
 
-msg_info "Installing Zabbix"
+msg_info "Installing Zabbix (farts)"
 cd /tmp || exit
 curl -fsSL "$(curl -fsSL https://repo.zabbix.com/zabbix/ |
   grep -oP '(?<=href=")[0-9]+\.0+(?=/")' | sort -V | tail -n1 |
