@@ -4,7 +4,7 @@
 # Author: MickLesk (CanbiZ)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://www.zabbix.com/
-
+msg_info "FARTS"
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
